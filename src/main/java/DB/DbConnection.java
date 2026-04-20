@@ -1,6 +1,6 @@
-package main.java.fight.DB;
+package DB;
 
-import main.java.fight.DB.exceptions.DbException;
+import DB.exceptions.DbException;
 
 import java.io.FileInputStream;
 import java.io.IOException;

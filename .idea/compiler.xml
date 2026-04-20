@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="meu-app-web" />
+        <module name="fight-card" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="meu-app-web" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,9 +1,9 @@
-package main.java.fight.model.dao.daoJDBC;
+package model.dao.daoJDBC;
 
-import main.java.fight.DB.DbConnection;
-import main.java.fight.DB.exceptions.DbException;
-import main.java.fight.model.dao.UserDao;
-import main.java.fight.model.entities.User;
+import DB.DbConnection;
+import DB.exceptions.DbException;
+import model.dao.UserDao;
+import model.entities.User;
 
 import java.sql.*;
 import java.util.ArrayList;

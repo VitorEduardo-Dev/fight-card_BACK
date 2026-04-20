@@ -4,7 +4,7 @@ out/
 !**/src/test/**/out/
 properties.config
 .kotlin
-
+.idea
 ### Eclipse ###
 .apt_generated
 .classpath

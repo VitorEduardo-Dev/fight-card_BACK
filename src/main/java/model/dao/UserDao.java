@@ -1,6 +1,6 @@
-package main.java.fight.model.dao;
+package model.dao;
 
-import main.java.fight.model.entities.User;
+import model.entities.User;
 
 import java.util.List;
 

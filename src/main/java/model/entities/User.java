@@ -1,4 +1,4 @@
-package main.java.fight.model.entities;
+package model.entities;
 
 import java.util.Objects;
 
