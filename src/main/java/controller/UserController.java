@@ -1,4 +1,4 @@
-package model.dao.controller;
+package controller;
 
 import com.google.gson.Gson;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,6 +9,7 @@ import model.dao.UserDao;
 import model.entities.User;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("api/user")
 public class UserController extends HttpServlet {
@@ -25,13 +26,17 @@ public class UserController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         User user = dao.findById(request.getIntHeader("id"));
+        PrintWriter out = response.getWriter();
+        String jsonOut = null;
 
         if(user != null) {
             User userGet = new User(user.getId(), user.getUsername(), user.getPassword(), user.getEmail());
-            String jsonOut = new Gson().toJson(userGet);
+            jsonOut = new Gson().toJson(userGet);
             response.getWriter().write(jsonOut);
         } else {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Id obrigatório!");
         }
+
+        out.println(jsonOut);
     }
 }
