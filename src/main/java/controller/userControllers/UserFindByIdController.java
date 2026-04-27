@@ -1,6 +1,6 @@
-package controller;
+package controller.userControllers;
 
-import com.google.gson.Gson;
+import com.google.gson.Gson; 
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,13 +12,14 @@ import model.entities.User;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/getuser")
-public class UserController extends HttpServlet {
+public class UserFindByIdController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private UserDao dao = DaoFactory.createUserDao();
     
-    public UserController() {
+    public UserFindByIdController() {
     	super();
     }
 
@@ -52,4 +53,5 @@ public class UserController extends HttpServlet {
         out.write(jsonOut);
     	
     }
+   
 }

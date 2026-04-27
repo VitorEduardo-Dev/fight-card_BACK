@@ -123,12 +123,13 @@ public class UserDaoJDBC implements UserDao {
         return user;
     }
 
+    @Override
     public List<User> findAll() {
         PreparedStatement st = null;
         ResultSet rs = null;
 
         try {
-            st = conn.prepareStatement("SELECT * FROM tb_user ORDER BY id_user");
+            st = conn.prepareStatement("SELECT * FROM tb_user");
 
             rs = st.executeQuery();
             List<User> userList =  new ArrayList<>();
