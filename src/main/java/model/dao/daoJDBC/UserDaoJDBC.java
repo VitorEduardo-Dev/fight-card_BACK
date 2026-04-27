@@ -11,7 +11,7 @@ import java.util.List;
 
 public class UserDaoJDBC implements UserDao {
     private Connection conn;
-
+    
     public UserDaoJDBC(Connection conn) {
         this.conn = conn;
     }
@@ -91,6 +91,7 @@ public class UserDaoJDBC implements UserDao {
     public User findById(Integer id) {
         PreparedStatement st = null;
         ResultSet rs = null;
+        User user = null;
 
         try {
             st = conn.prepareStatement("SELECT * FROM tb_user WHERE id_user = ?");
@@ -98,12 +99,12 @@ public class UserDaoJDBC implements UserDao {
             st.setInt(1, id);
 
             rs = st.executeQuery();
-
+            
             if(rs.next()) {
-                User user = instantiateUser(rs);
+                user = instantiateUser(rs);
             }
-
-            return null;
+            
+            return user;
         } catch(SQLException e) {
             throw new DbException(e.getMessage());
         } finally {;
