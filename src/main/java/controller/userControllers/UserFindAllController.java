@@ -33,19 +33,17 @@ public class UserFindAllController extends HttpServlet {
 		List<User> userList = dao.findAll();
 		
 		if(!userList.isEmpty() && userList != null) {
-			try {
-				for(User user : userList) {
-					if(user != null) {
-						jsonOut = new Gson().toJson(user);
-						out.write(jsonOut);
-					} else {
-						response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "List not found!");
-					}
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-				response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "List users not found or not exists!");
-			}
+//				for(User user : userList) {
+//					if(user != null) {
+//						jsonOut = new Gson().toJson(userList);
+//						out.write(jsonOut);
+//						out.println(",");
+//					} else {
+//						response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "List not found!");
+//					}
+//				}
+			jsonOut = new Gson().toJson(userList);
+			out.write(jsonOut);
 		} else {
 			response.sendError(HttpServletResponse.SC_BAD_GATEWAY, "List not uses!");
 		}
